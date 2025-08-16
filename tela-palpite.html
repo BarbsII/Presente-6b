@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Palpite</title>
+</head>
+<body>
+    <header>
+        <div class="titulo">
+            <h1>When Taken</h1>
+
+            <!-- Identificador de Rounds -->
+            <div class="rounds">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <hr>
+    
+    <main>
+        <!-- Foto -->
+        <div class="main-esq">
+            <h2>Foto</h2>
+        </div>
+
+        <!-- Seletor de Ano -->
+        <div class="main-dir">
+            <h2>Palpite</h2>
+            <input type="range" min="2019" max="2025" value="2022" list="markers">
+        <datalist id="markers">
+            <option value="2019" label="2019"></option>
+            <option value="2020" label="2020"></option>
+            <option value="2021" label="2021"></option>
+            <option value="2022" label="2022"></option>
+            <option value="2023" label="2023"></option>
+            <option value="2024" label="2024"></option>
+            <option value="2025" label="2025"></option>
+        </datalist>
+            <button>Enviar</button>
+        </div>
+    </main>
+</body>
+</html>

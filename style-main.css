@@ -63,6 +63,13 @@ datalist {
   font-size: 3rem;
 }
 
+a{
+    text-decoration: none;
+}
+a::after{
+    text-decoration: none;
+}
+
 /* ids */
 #div-texto-principal{
     text-align: center;
