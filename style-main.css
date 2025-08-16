@@ -43,12 +43,24 @@ button{
     padding: 2rem 30%;
     border-radius: 15px;
     background-color: #6a09f6;
+    border-style: none;
 }
+
+button:hover{
+    background-color: #5a0dc6;
+}
+
 
 img{
     align-self: center;
     width: 40vw;
     border-radius: 50px;
+}
+
+datalist {
+  display: flex;
+  justify-content: space-between;
+  font-size: 3rem;
 }
 
 /* ids */
@@ -73,10 +85,6 @@ img{
     margin: 7rem 0 0;
 }
 
-.range-slider{
-    display: flex;
-    justify-content: space-between;
-}
 .range-slider p{
     margin: 0;
 }

@@ -20,11 +20,18 @@
     </section>
     <section class="foto-slider">
     <img src="exemplo-corgi.jpg" alt="Imagem Exemplo">
-    <input type="range" min="2019" max="2025" value="2022">
-    <div class="range-slider">
-        <p>2019</p>
-        <p>2025</p>
-    </div>
+    <input type="range" min="2019" max="2025" value="2022" list="markers">
+    <datalist id="markers">
+        <option value="2019" label="2019"></option>
+        <option value="2020" label="2020"></option>
+        <option value="2021" label="2021"></option>
+        <option value="2022" label="2022"></option>
+        <option value="2023" label="2023"></option>
+        <option value="2024" label="2024"></option>
+        <option value="2025" label="2025"></option>
+
+    </datalist>
+
     </section>
 </body>
 </html>
