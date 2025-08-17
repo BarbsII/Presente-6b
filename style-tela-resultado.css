@@ -1,0 +1,93 @@
+*{
+    font-size: 62.5%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+body{
+    background-color: #1c073a;
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: flex-start;
+}
+
+/* Imagens */
+.fotos img{
+    box-sizing: border-box;
+    height: 20vh;
+    width: 20vh;
+    border-radius: 2.5rem;
+    box-shadow: 1rem 1rem #230351;
+    border-color: #1c073a;
+    border-style: dashed;
+}
+
+.fotos{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Resultados */
+h1{
+    font-size: 5rem;
+}
+
+h1 span{
+    font-size: inherit
+}
+
+.texto p{
+    font-size: 3rem;
+    text-align: center;
+}
+
+
+/* Conquistas */
+.conquista{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: #8448d7;
+    
+    margin-top: 5rem;
+    
+    height: 20vh;
+    width: 60vw;
+
+    border-radius: 3rem;
+
+    padding: 0 1rem;
+
+    /* Controle de Efeitos */
+    filter: saturate(0);
+
+}
+
+.conquista:hover {
+    background-color: #6839aa;
+}
+
+.conquista *{
+    user-select: none;
+    opacity: 80%;
+}
+
+.conquista img{
+    height: 90%;
+    
+    border-style: solid;
+    border-radius: 3rem;
+    border-color: #1c073a;
+
+    margin-right: 10rem;
+}
