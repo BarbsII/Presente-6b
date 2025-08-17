@@ -10,17 +10,23 @@
     <header>
         <div class="titulo">
             <h1>When <span>Taken</span> - B&B</h1>
-
+            
             <!-- Identificador de Rounds -->
             <div class="rounds">
-                <h2>Round</h2>
+                <p>Round</p>
                 <ul>
-                    <li>1</li><hr>
-                    <li>2</li><hr>
-                    <li>3</li><hr>
-                    <li>4</li><hr>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
                     <li>5</li>
                 </ul>
+            </div>
+
+            <!-- Pontuação -->
+             <div id="pontos">
+                <p>Pontos</p>
+                <p id="pontos-atuais"><b>0/100</b></p>
             </div>
         </div>
     </header>
@@ -30,12 +36,13 @@
     <main>
         <!-- Foto -->
         <div class="main-esq">
-            <img src="exemplo-corgi.jpg" alt="Foto-para-descobrir">
+            <img src="exemplo-pinguim.jpg" alt="Foto-para-descobrir">
         </div>
 
         <!-- Seletor de Ano -->
         <div class="main-dir">
             <h2>ANO</h2>
+            <p id="ano-selecionado">----</p>
             <input type="range" min="2019" max="2025" value="2022" list="markers">
         <datalist id="markers">
             <option value="2019" label="2019"></option>
@@ -46,7 +53,11 @@
             <option value="2024" label="2024"></option>
             <option value="2025" label="2025"></option>
         </datalist>
+        <!-- Botões -->
+        <div class="botoes">
+            <button>Dica</button>
             <button>Enviar</button>
+        </div>
         </div>
     </main>
 </body>
