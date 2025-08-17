@@ -115,6 +115,7 @@ datalist {
   justify-content: space-between;
   font-size: 3rem;
   margin-bottom: 5rem;
+  user-select: none;
 }
 
 .main-dir button{
