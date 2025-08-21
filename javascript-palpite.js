@@ -1,5 +1,10 @@
 // LISTAS
-const fotos = {"fotos/exemplo-corgi.png": 2019, "fotos/exemplo-pinguim.jpg": 2020, "fotos/exemplo-lontra.png": 2021};
+
+var fotos = new Map();
+fotos.set("fotos/exemplo-corgi.png", 2019);
+fotos.set("fotos/exemplo-pinguim.jpg", 2020);
+fotos.set("fotos/exemplo-lontra.png", 2021);
+
 const acertos = [];
 
 // VARIÁVEIS
@@ -30,7 +35,7 @@ inputAno.addEventListener("change", () => {
 function newRound(){
     // Captura os pontos da rodada
     let fotoTela = document.getElementById("foto-palpite"); // foto atual
-    let anoFotoTela = fotos[fotoTela.getAttribute("src")];
+    let anoFotoTela = fotos.get(fotoTela.getAttribute("src"));
     
     pontuacaoFinal += pontuacao(anoFotoTela, inputAno.value);
     
