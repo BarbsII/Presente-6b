@@ -1,9 +1,9 @@
 // LISTAS
 
 var fotos = new Map();
-fotos.set("fotos/exemplo-corgi.png", 2019);
+fotos.set("fotos/exemplo-corgi.jpg", 2019);
 fotos.set("fotos/exemplo-pinguim.jpg", 2020);
-fotos.set("fotos/exemplo-lontra.png", 2021);
+fotos.set("fotos/exemplo-lontra.jpg", 2021);
 
 const acertos = [];
 
@@ -20,6 +20,14 @@ document.getElementById("1").style.backgroundColor = "#8448d7"
 
 /// Escolha da foto
 //// uma chave aleatória da biblioteca fotos
+var numeroAletorio = getRandomIntInclusive(1, fotos.size)
+const iteradorFotos = fotos.keys();
+var fotoAleatoria;
+for (let i = 0; i < numeroAletorio; i++){
+    fotoAleatoria = iteradorFotos.next().value;
+}
+
+document.getElementById("foto-palpite").setAttribute("src", fotoAleatoria);
 
 
 // FUNÇÕES
@@ -101,3 +109,8 @@ function mudaMostradorRound(){
     }
 }
 
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
