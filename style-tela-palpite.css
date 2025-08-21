@@ -103,6 +103,7 @@ img{
     box-shadow: 3rem 3rem #8448d7;
     border-color: #1c073a;
     border-style: dashed;
+    max-height: 90vh;
     
 }
  /* Main Direita */

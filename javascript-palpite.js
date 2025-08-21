@@ -1,16 +1,23 @@
 // LISTAS
 
 var fotos = new Map();
-fotos.set("fotos/exemplo-corgi.jpg", 2019);
-fotos.set("fotos/exemplo-pinguim.jpg", 2020);
-fotos.set("fotos/exemplo-lontra.jpg", 2021);
+fotos.set("fotos-6b/foto2019.jpg", 2019);
+fotos.set("fotos-6b/foto2020.jpg", 2020);
+fotos.set("fotos-6b/foto2022_2.jpg", 2022);
+fotos.set("fotos-6b/foto2022.jpeg", 2022);
+fotos.set("fotos-6b/foto2024_2.jpg", 2024);
+fotos.set("fotos-6b/foto2024.jpg", 2024);
+fotos.set("fotos-6b/foto2025.jpeg", 2025)
 
 const acertos = [];
+
+const numerosUsados = []
 
 // VARIÁVEIS
 var round = 1;
 var ano_escolhido;
 var pontuacaoFinal = 0;
+numDeFotos = 7;
 
 // CONFIGURAÇÃO INICIAL
 
@@ -20,7 +27,6 @@ document.getElementById("1").style.backgroundColor = "#8448d7"
 
 /// Escolha da foto
 escolhaDeFoto();
-
 
 // FUNÇÕES
 
@@ -36,9 +42,12 @@ inputAno.addEventListener("change", () => {
 function newRound(){
     // Analisa se o ano foi escolhido
     if (anoMostrador.innerHTML == "----"){
-        alert("Escolha um ano")
+        alert("Escolha um ano");
         return;
     }
+
+    // Esconde a dica
+    document.querySelector("section").innerHTML = "";
 
     // Captura os pontos da rodada
     let fotoTela = document.getElementById("foto-palpite"); // foto atual
@@ -98,10 +107,11 @@ function mudaMostradorRound(){
         elemento_round = document.getElementById(round.toString());
         elemento_round.style.backgroundColor = "#8448d7";
         elemento_round.style.color = "#fff";
-
+    
     } else {
 
-        round = 1;
+        //round = 1;
+        window.open("tela-resultado.html", self);
         console.log("Próxima Tela");
         console.log("Pontuação Final: " + pontuacaoFinal);
         console.log("Acertos: " + acertos);
@@ -116,7 +126,19 @@ function getRandomIntInclusive(min, max) {
 
 function escolhaDeFoto(){
     //// uma chave aleatória da biblioteca fotos
-var numeroAletorio = getRandomIntInclusive(1, fotos.size)
+while (true){
+    var numeroAletorio = getRandomIntInclusive(1, fotos.size)
+
+    // se o número não foi usado:
+    if (numerosUsados.indexOf(numeroAletorio) == -1){
+        numerosUsados.push(numeroAletorio);
+        break;
+    } else {
+        if(numerosUsados.length == numDeFotos){ break; }
+        continue;
+    }
+}
+
 const iteradorFotos = fotos.keys();
 var fotoAleatoria;
 for (let i = 0; i < numeroAletorio; i++){
