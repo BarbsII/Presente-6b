@@ -19,15 +19,7 @@ document.getElementById("1").style.color = "#fff";
 document.getElementById("1").style.backgroundColor = "#8448d7"
 
 /// Escolha da foto
-//// uma chave aleatória da biblioteca fotos
-var numeroAletorio = getRandomIntInclusive(1, fotos.size)
-const iteradorFotos = fotos.keys();
-var fotoAleatoria;
-for (let i = 0; i < numeroAletorio; i++){
-    fotoAleatoria = iteradorFotos.next().value;
-}
-
-document.getElementById("foto-palpite").setAttribute("src", fotoAleatoria);
+escolhaDeFoto();
 
 
 // FUNÇÕES
@@ -54,7 +46,7 @@ function newRound(){
     mudaMostradorRound();
 
     // Troca a foto
-    
+    escolhaDeFoto();
     
 }
 
@@ -113,4 +105,16 @@ function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function escolhaDeFoto(){
+    //// uma chave aleatória da biblioteca fotos
+var numeroAletorio = getRandomIntInclusive(1, fotos.size)
+const iteradorFotos = fotos.keys();
+var fotoAleatoria;
+for (let i = 0; i < numeroAletorio; i++){
+    fotoAleatoria = iteradorFotos.next().value;
+}
+
+document.getElementById("foto-palpite").setAttribute("src", fotoAleatoria);
 }
