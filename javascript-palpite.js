@@ -25,14 +25,21 @@ escolhaDeFoto();
 // FUNÇÕES
 
 /* Função para exibir ano selecionado */
+var anoMostrador = document.getElementById("ano-selecionado");
 const inputAno = document.querySelector("input");
 inputAno.addEventListener("change", () => {
-    document.getElementById("ano-selecionado").innerHTML = inputAno.value;
+    anoMostrador.innerHTML = inputAno.value;
 })
 
 
 /* Função do Aperto do Botão Enviar */
 function newRound(){
+    // Analisa se o ano foi escolhido
+    if (anoMostrador.innerHTML == "----"){
+        alert("Escolha um ano")
+        return;
+    }
+
     // Captura os pontos da rodada
     let fotoTela = document.getElementById("foto-palpite"); // foto atual
     let anoFotoTela = fotos.get(fotoTela.getAttribute("src"));
@@ -117,4 +124,10 @@ for (let i = 0; i < numeroAletorio; i++){
 }
 
 document.getElementById("foto-palpite").setAttribute("src", fotoAleatoria);
+}
+
+function dica(){
+    const sect = document.querySelector("section")
+    sect.textContent = "Dica: Aí fica fácil demais, pensa ae";
+    
 }

@@ -44,23 +44,25 @@
             <h2>ANO</h2>
             <p id="ano-selecionado">----</p>
             <input type="range" min="2019" max="2025" value="2022" list="markers" id="input-ano">
-        <datalist id="markers">
-            <option value="2019" label="2019"></option>
-            <option value="2020" label="2020"></option>
-            <option value="2021" label="2021"></option>
-            <option value="2022" label="2022"></option>
-            <option value="2023" label="2023"></option>
-            <option value="2024" label="2024"></option>
-            <option value="2025" label="2025"></option>
-        </datalist>
-        <!-- Botões -->
-        <div class="botoes">
-            <button>Dica</button>
-            <button onclick="newRound();">Enviar</button>
-        </div>
+            <datalist id="markers">
+                <option value="2019" label="2019"></option>
+                <option value="2020" label="2020"></option>
+                <option value="2021" label="2021"></option>
+                <option value="2022" label="2022"></option>
+                <option value="2023" label="2023"></option>
+                <option value="2024" label="2024"></option>
+                <option value="2025" label="2025"></option>
+            </datalist>
+            <!-- Botões -->
+            <div class="botoes">
+                <button onclick="dica();">Dica</button>
+                <button onclick="newRound();">Enviar</button>
+            </div>
+            <!-- Local da Dica -->
+                <section></section>
         </div>
     </main>
-
+    <section></section>
     <script src="javascript-palpite.js"></script>
 </body>
 </html>
