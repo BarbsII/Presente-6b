@@ -14,12 +14,12 @@
             <!-- Identificador de Rounds -->
             <div class="rounds">
                 <p>Round</p>
-                <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
+                <ul id="num-rounds">
+                    <li id="1">1</li>
+                    <li id="2">2</li>
+                    <li id="3">3</li>
+                    <li id="4">4</li>
+                    <li id="5">5</li>
                 </ul>
             </div>
 
@@ -43,7 +43,7 @@
         <div class="main-dir">
             <h2>ANO</h2>
             <p id="ano-selecionado">----</p>
-            <input type="range" min="2019" max="2025" value="2022" list="markers">
+            <input type="range" min="2019" max="2025" value="2022" list="markers" id="input-ano">
         <datalist id="markers">
             <option value="2019" label="2019"></option>
             <option value="2020" label="2020"></option>
@@ -56,9 +56,11 @@
         <!-- Botões -->
         <div class="botoes">
             <button>Dica</button>
-            <button>Enviar</button>
+            <button onclick="newRound();">Enviar</button>
         </div>
         </div>
     </main>
+
+    <script src="javascript-palpite.js"></script>
 </body>
 </html>
