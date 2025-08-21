@@ -1,15 +1,23 @@
-// Listas
+// LISTAS
 const fotos = {"fotos/exemplo-corgi.png": 2019, "fotos/exemplo-pinguim.jpg": 2020, "fotos/exemplo-lontra.png": 2021};
 const acertos = [];
 
-// Variáveis
+// VARIÁVEIS
 var round = 1;
 var ano_escolhido;
 var pontuacaoFinal = 0;
 
 // CONFIGURAÇÃO INICIAL
+
+/// Botão Round 1 selecionado
 document.getElementById("1").style.color = "#fff";
 document.getElementById("1").style.backgroundColor = "#8448d7"
+
+/// Escolha da foto
+//// uma chave aleatória da biblioteca fotos
+
+
+// FUNÇÕES
 
 /* Função para exibir ano selecionado */
 const inputAno = document.querySelector("input");
@@ -29,10 +37,10 @@ function newRound(){
     // Exibe pontuação
     document.getElementById("pontos-atuais").innerHTML = pontuacaoFinal + "/100"
 
-
     // Muda mostrador
     mudaMostradorRound();
 
+    // Troca a foto
     
     
 }
@@ -62,24 +70,22 @@ function mudaMostradorRound(){
     document.getElementById("ano-selecionado").innerHTML = "----";
 
     if (round != 5) {
-    
+
+        // DEBUG
         var ano_escolhido = inputAno.value;
         console.log("Ano Escolhido: " + ano_escolhido);
+        // FIM DEBUG
 
         // Retorna visual do elemento atual
         var elemento_round = document.getElementById(round.toString());
         elemento_round.style.backgroundColor = "#fff";
         elemento_round.style.color = "#8448d7";
         
-
         // Muda o round e visual do elemento
         round++;
         elemento_round = document.getElementById(round.toString());
-        //console.log(elemento_round);
         elemento_round.style.backgroundColor = "#8448d7";
         elemento_round.style.color = "#fff";
-
-        // Escolhe a foto
 
     } else {
 
