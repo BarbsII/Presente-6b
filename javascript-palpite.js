@@ -2,6 +2,12 @@
 var round = 0;
 
 newRound();
+/* Função para exibir ano selecionado */
+const input_ano = document.querySelector("input");
+input_ano.addEventListener("change", () => {
+    document.getElementById("ano-selecionado").innerHTML = input_ano.value;
+})
+
 
 /* Função para mudar aparência dos Rounds */
 function newRound(){
