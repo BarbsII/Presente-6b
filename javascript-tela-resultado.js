@@ -85,3 +85,11 @@ function jogarConfeti(){
         return colors[Math.floor(Math.random() * colors.length)];
     }
 }
+
+//----------------------------------------------------------//
+// Função Botão Tentar Novamente
+//----------------------------------------------------------//
+function novaTentativa(){
+    sessionStorage.clear();
+    window.location.href = "tela-palpite.html";
+}

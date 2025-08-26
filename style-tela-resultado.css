@@ -45,6 +45,10 @@ header button{
 
 }
 
+header button:hover{
+    background-color: #5a0dc6;
+}
+
 header h1{
     text-transform: uppercase;
 }
