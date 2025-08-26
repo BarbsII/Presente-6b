@@ -52,9 +52,9 @@ function newRound(){
     // Captura os pontos da rodada
     let fotoTela = document.getElementById("foto-palpite"); // foto atual
     let anoFotoTela = fotos.get(fotoTela.getAttribute("src"));
-    
+
     pontuacaoFinal += pontuacao(anoFotoTela, inputAno.value);
-    
+
     // Exibe pontuação
     document.getElementById("pontos-atuais").innerHTML = pontuacaoFinal + "/100"
 
@@ -63,7 +63,7 @@ function newRound(){
 
     // Troca a foto
     escolhaDeFoto();
-    
+
 }
 
 /* Lógica dos pontos */
@@ -101,20 +101,20 @@ function mudaMostradorRound(){
         var elemento_round = document.getElementById(round.toString());
         elemento_round.style.backgroundColor = "#fff";
         elemento_round.style.color = "#8448d7";
-        
+
         // Muda o round e visual do elemento
         round++;
         elemento_round = document.getElementById(round.toString());
         elemento_round.style.backgroundColor = "#8448d7";
         elemento_round.style.color = "#fff";
-    
+
     } else {
 
         //round = 1;
-        window.open("tela-resultado.html", self);
         console.log("Próxima Tela");
         console.log("Pontuação Final: " + pontuacaoFinal);
         console.log("Acertos: " + acertos);
+        window.location.href ="tela-resultado.html";
     }
 }
 
@@ -148,8 +148,9 @@ for (let i = 0; i < numeroAletorio; i++){
 document.getElementById("foto-palpite").setAttribute("src", fotoAleatoria);
 }
 
+/** Função de Dica */
 function dica(){
     const sect = document.querySelector("section")
     sect.textContent = "Dica: Aí fica fácil demais, pensa ae";
-    
+
 }
