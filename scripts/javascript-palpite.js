@@ -1,13 +1,13 @@
 // MAP E LISTAS
 
 var fotos = new Map();
-fotos.set("fotos-6b/foto2019.jpg", 2019);
-fotos.set("fotos-6b/foto2020.jpg", 2020);
-fotos.set("fotos-6b/foto2022_2.jpg", 2022);
-fotos.set("fotos-6b/foto2022.jpeg", 2022);
-fotos.set("fotos-6b/foto2024_2.jpg", 2024);
-fotos.set("fotos-6b/foto2024.jpg", 2024);
-fotos.set("fotos-6b/foto2025.jpeg", 2025)
+fotos.set("../fotos-6b/foto2019.jpg", 2019);
+fotos.set("../fotos-6b/foto2020.jpg", 2020);
+fotos.set("../fotos-6b/foto2022_2.jpg", 2022);
+fotos.set("../fotos-6b/foto2022.jpeg", 2022);
+fotos.set("../fotos-6b/foto2024_2.jpg", 2024);
+fotos.set("../fotos-6b/foto2024.jpg", 2024);
+fotos.set("../fotos-6b/foto2025.jpeg", 2025)
 
 const acertos = [];
 const numerosUsados = [];
