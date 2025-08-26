@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style-tela-resultado.css">
 </head>
 <body>
+    <div class="confetti-wrapper"></div>
     <header>
        
             <h1>When <span>Taken</span> - B&B</h1>
@@ -18,28 +19,27 @@
 
     <hr>
 
-    <div class="fotos">
-        <img src="exemplo-lontra.jpg" alt="1">
-        <img src="exemplo-lontra.jpg" alt="3">
-        <img src="exemplo-lontra.jpg" alt="4">
-        <img src="exemplo-lontra.jpg" alt="2">
-        <img src="exemplo-lontra.jpg" alt="5">
-        <img src="exemplo-lontra.jpg" alt="6">
+    <div class="fotos" id="fotos">
+        <img src="" alt="1" id="foto1">
+        <img src="" alt="3" id="foto2">
+        <img src="" alt="4" id="foto3">
+        <img src="" alt="2" id="foto4">
+        <img src="" alt="5" id="foto5">
     </div>
     
     <div class="texto">
         <h1>Resultado:  <span id="resultado">0/6</span></h1>
-        <p id="mensagem-resultado">Parabéns!</p>
+        <p id="mensagem-resultado"></p>
     </div>
-    
-    <div class="conquista">
-            <img src="exemplo-corgi.jpg" alt="Foto de Troféu">
+
+    <button class="conquista" id="div-conquista">
+            <img src="trophy-svgrepo-com.svg" alt="Foto de Troféu">
+            
             <div class="texto">
                 <p>Conquista</p>
                 <p>Acerte todas as fotos!</p>
             </div>
-            
-    </div>
-    
+    </button>
+    <script src="javascript-tela-resultado.js"></script>
 </body>
 </html>

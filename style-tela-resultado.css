@@ -56,12 +56,12 @@ hr{
 /* Imagens */
 .fotos img{
     box-sizing: border-box;
-    height: 20vh;
+    /* height: 20vh; */
     width: 20vh;
     border-radius: 2.5rem;
     box-shadow: 1rem 1rem #230351;
     border-color: #1c073a;
-    border-style: dashed;
+    border-style: solid;
 }
 
 .fotos{
@@ -84,25 +84,26 @@ h1 span{
 .texto p{
     font-size: 3rem;
     text-align: center;
+    color: #fff;
 }
 
 
 /* Conquistas */
 .conquista{
     display: flex;
-    justify-content: flex-start;
+    justify-content:space-between;
     align-items: center;
 
     background-color: #8448d7;
     
     margin-top: 5rem;
-    
+        
     height: 20vh;
     width: 60vw;
 
     border-radius: 3rem;
 
-    padding: 0 1rem;
+    padding: 0 25rem 0 1rem ;
 
     /* Controle de Efeitos */
     filter: saturate(0);
@@ -115,15 +116,45 @@ h1 span{
 
 .conquista *{
     user-select: none;
-    opacity: 80%;
 }
 
 .conquista img{
     height: 90%;
     
-    border-style: solid;
     border-radius: 3rem;
-    border-color: #1c073a;
 
     margin-right: 10rem;
+}
+
+button{
+    border-style: none;
+}
+
+/* CONFETTI */
+.confetti-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Prevent interaction */
+  overflow: hidden;
+}
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.8;
+  }
+}
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  background: var(--confetti-color, red);
+  opacity: 0.9;
+  animation: confetti-fall var(--fall-duration, 4s) linear infinite;
 }

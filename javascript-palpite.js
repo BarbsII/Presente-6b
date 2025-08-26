@@ -17,6 +17,7 @@ const fotosEscolhidas = [];
 var round = 1;
 var ano_escolhido;
 var pontuacaoFinal = 0;
+var numAcertos = 0;
 numDeFotos = fotos.size;
 
 //----------------------------------------------------------//
@@ -84,7 +85,7 @@ function pontuacao(anoEscolhido, anoCorreto){
 
     // Retorno de Pontos
     switch (diferenca){
-        case 0: acertos.push(1); return 20;
+        case 0: acertos.push(1); numAcertos = numAcertos + 1; return 20;
         case 1: acertos.push(0); return 10;
         case 2: acertos.push(0); return 5;
         default: acertos.push(0); return 0;
@@ -124,6 +125,7 @@ function mudaMostradorRound(){
         // Guarda informações (temporariamente) para próxima página 
         sessionStorage.setItem('pontuacao-final', pontuacaoFinal);
         sessionStorage.setItem('acertos', JSON.stringify(acertos));
+        sessionStorage.setItem('num-acertos', numAcertos);
         sessionStorage.setItem('fotos-escolhidas', JSON.stringify(fotosEscolhidas));
 
         // Muda de página
