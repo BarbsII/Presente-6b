@@ -1,4 +1,4 @@
-// LISTAS
+// MAP E LISTAS
 
 var fotos = new Map();
 fotos.set("fotos-6b/foto2019.jpg", 2019);
@@ -10,16 +10,18 @@ fotos.set("fotos-6b/foto2024.jpg", 2024);
 fotos.set("fotos-6b/foto2025.jpeg", 2025)
 
 const acertos = [];
-
-const numerosUsados = []
+const numerosUsados = [];
+const fotosEscolhidas = [];
 
 // VARIÁVEIS
 var round = 1;
 var ano_escolhido;
 var pontuacaoFinal = 0;
-numDeFotos = 7;
+numDeFotos = fotos.size;
 
+//----------------------------------------------------------//
 // CONFIGURAÇÃO INICIAL
+//----------------------------------------------------------//
 
 /// Botão Round 1 selecionado
 document.getElementById("1").style.color = "#fff";
@@ -28,17 +30,18 @@ document.getElementById("1").style.backgroundColor = "#8448d7"
 /// Escolha da foto
 escolhaDeFoto();
 
-// FUNÇÕES
-
-/* Função para exibir ano selecionado */
+/** Exibição de ano selecionado */
 var anoMostrador = document.getElementById("ano-selecionado");
 const inputAno = document.querySelector("input");
 inputAno.addEventListener("change", () => {
     anoMostrador.innerHTML = inputAno.value;
 })
 
+// ----------------------------------------------------------//
+// FUNÇÕES
+//----------------------------------------------------------//
 
-/* Função do Aperto do Botão Enviar */
+/** Função do Aperto do Botão Enviar */
 function newRound(){
     // Analisa se o ano foi escolhido
     if (anoMostrador.innerHTML == "----"){
@@ -73,6 +76,8 @@ function newRound(){
 // 2 = 5 pnts
 // +3 = 0 pnts
 
+
+/** Função de Cálculo de Pontução */
 function pontuacao(anoEscolhido, anoCorreto){
     // Valor absoluto da diferença
     diferenca = Math.abs(anoCorreto - anoEscolhido);
@@ -86,6 +91,7 @@ function pontuacao(anoEscolhido, anoCorreto){
     }
 }
 
+/** Função para Alterar Round (Aparência e Página)*/
 function mudaMostradorRound(){
 // Zera mostrador do ano
     document.getElementById("ano-selecionado").innerHTML = "----";
@@ -109,21 +115,30 @@ function mudaMostradorRound(){
         elemento_round.style.color = "#fff";
 
     } else {
-
-        //round = 1;
-        console.log("Próxima Tela");
+        // Final dos Palpites
+        
+        //console.log("Próxima Tela");
         console.log("Pontuação Final: " + pontuacaoFinal);
         console.log("Acertos: " + acertos);
+
+        // Guarda informações (temporariamente) para próxima página 
+        sessionStorage.setItem('pontuacao-final', pontuacaoFinal);
+        sessionStorage.setItem('acertos', JSON.stringify(acertos));
+        sessionStorage.setItem('fotos-escolhidas', JSON.stringify(fotosEscolhidas));
+
+        // Muda de página
         window.location.href ="tela-resultado.html";
     }
 }
 
+/** Função de Número Aleatório */
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+/** Função de Escolha de Foto */
 function escolhaDeFoto(){
     //// uma chave aleatória da biblioteca fotos
 while (true){
@@ -139,13 +154,18 @@ while (true){
     }
 }
 
+// Procura pela foto
 const iteradorFotos = fotos.keys();
 var fotoAleatoria;
 for (let i = 0; i < numeroAletorio; i++){
     fotoAleatoria = iteradorFotos.next().value;
 }
 
+// Adiciona foto na página
 document.getElementById("foto-palpite").setAttribute("src", fotoAleatoria);
+
+// Guarda foto escolhida
+fotosEscolhidas.push(fotoAleatoria);
 }
 
 /** Função de Dica */
